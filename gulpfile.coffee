@@ -5,7 +5,13 @@ gulp.task('bower', ->
   $.bower().pipe(gulp.dest('./bower_components'))
 )
 
-gulp.task('compile', ['compile-js', 'compile-css'])
+gulp.task('compile', ['compile-html', 'compile-js', 'compile-css'])
+
+gulp.task('compile-html', ->
+  gulp
+  .src('src/html/**/*.html')
+  .pipe(gulp.dest('app'))
+)
 
 gulp.task('compile-js', ->
   gulp
