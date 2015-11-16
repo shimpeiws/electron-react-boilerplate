@@ -5,7 +5,7 @@ import CrashReporter from 'crash-reporter';
 let mainWindow = null;
 
 if(process.env.NODE_ENV === 'develop'){
-  CrashReporter.start();
+    CrashReporter.start();
 }
 
 app.on('ready', () => {
