@@ -1,7 +1,12 @@
 import app from 'app';
 import BrowserWindow from 'browser-window';
+import CrashReporter from 'crash-reporter';
 
 let mainWindow = null;
+
+if(process.env.NODE_ENV === 'develop'){
+  CrashReporter.start();
+}
 
 app.on('ready', () => {
     if(mainWindow) {
